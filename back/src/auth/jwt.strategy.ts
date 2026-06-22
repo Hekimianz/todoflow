@@ -11,7 +11,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       secretOrKey: configService.getOrThrow<string>('JWT_SECRET'),
     });
   }
-  validate(payload: { sub: number; username: string }) {
+  validate(payload: { sub: string; username: string }) {
     return { id: payload.sub, username: payload.username };
   }
 }

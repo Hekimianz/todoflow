@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0D0118;
+  --surface: #140d24;
+  --border: #2e1f4a;
+  --foreground: #F1F5F9;
+  --muted: #64748B;
+  --primary: #7C3AED;
+  --primary-hover: #6D28D9;
+  --success: #10B981;
+  --danger: #EF4444;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-space);
+}
+
+body {
+  background: radial-gradient(ellipse at 20% 20%, #2a0a5e 0%, #0D0118 55%),
+              radial-gradient(ellipse at 80% 80%, #1a0533 0%, transparent 60%);
+  background-color: #0D0118;
+  color: var(--foreground);
+  font-family: var(--font-space);
+}
+
+@keyframes orb-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -25px) scale(1.05); }
+  66%       { transform: translate(-20px, 15px) scale(0.96); }
+}
+
+@keyframes orb-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(-28px, 20px) scale(1.07); }
+  66%       { transform: translate(18px, -18px) scale(0.95); }
+}
+
+@keyframes orb-float-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(20px, -30px) scale(1.1); }
+}
+
+.orb-1 { animation: orb-float-1 14s ease-in-out infinite; }
+.orb-2 { animation: orb-float-2 18s ease-in-out infinite; }
+.orb-3 { animation: orb-float-3 11s ease-in-out infinite; }
